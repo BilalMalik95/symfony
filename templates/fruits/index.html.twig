@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FruitsController!{% endblock %}
+
+{% block body %}
+
+
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Family</th>
+            <th>Genus</th>
+            <th>Calories</th>
+            <th>Fat</th>
+            <th>Sugar</th>
+            <th>Carbohydrates</th>
+            <th>protein</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for fruit  in  fruits  %}
+
+
+        <tr>
+            <td> {{ fruit.name }}</td>
+            <td> {{ fruit.family }}</td>
+            <td> {{ fruit.genus }}</td>
+            <td> {{ fruit.calories }}</td>
+            <td> {{ fruit.fat }}</td>
+            <td> {{ fruit.sugar }}</td>
+            <td> {{ fruit.carbohydrates }}</td>
+            <td> {{ fruit.protein }}</td>
+        </tr>
+        {% endfor %}
+        <tbody>
+<tfoot>
+        </tfoot>
+    </table>
+
+{% endblock %}
+   {% block javascripts %}
+       <script>
+$(document).ready(function () {
+$('#example').DataTable();
+});
+       </script>
+   {% endblock %}
